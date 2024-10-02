@@ -8,4 +8,4 @@ RUN apt install openjdk-8-jdk-headless -y
 WORKDIR /MCServer
 COPY /Output/Eula.txt /MCServer/
 RUN wget https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar
-java -jar server.jar --nogui ---Xmx8G
+RUN java -jar server.jar --nogui ---Xmx8G
