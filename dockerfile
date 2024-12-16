@@ -13,4 +13,4 @@ COPY /Output/eula.txt /MCServer/
 RUN wget https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar
 VOLUME /MCServer /MCServer
 EXPOSE 25565
-CMD java -Xmx2G -Xms2G -XX:+UnlockExperimentalVMOptions -XX:+UseZGC -jar server.jar --nogui &
+CMD java -Xmx2G -Xms2G -XX:+UnlockExperimentalVMOptions -XX:+UseZGC -jar server.jar --nogui
