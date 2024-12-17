@@ -1,0 +1,12 @@
+services:
+  Minecraft:
+    image: existedmaster/mcserver-vanilla
+    ports:
+      - "25565:25565"
+    volumes:
+    - type: volume
+      source: MCServer
+      target: /MCServer
+
+volumes:
+  MCServer:

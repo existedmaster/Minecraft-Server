@@ -1,15 +1,17 @@
 #Install ubuntu Image
 FROM ubuntu:24.10
+ENV DEBIAN_FRONTEND=noninteractive
 RUN mkdir MCServer
 RUN apt-get update
 #Installs the dependencies required to run the server and to edit files
 RUN apt install openjdk-21-jdk-headless -y
 RUN apt install openjdk-8-jdk-headless -y
-RUN apt-get install nano
+RUN apt-get install nano -y
 RUN apt-get install wget -y
-RUN --mount=type=bind target=/MCServer source=E:\MCServerStorage rw
+#RUN --mount=type=bind source=E:\MCServerStorage target=\MCServer rw
 ##Download Server Jar file and load EULA into server Directory 
 WORKDIR /MCServer
+COPY /Output/server.properties /MCServer/
 COPY /Output/eula.txt /MCServer/
 RUN wget https://piston-data.mojang.com/v1/objects/59353fb40c36d304f2035d51e7d6e6baa98dc05c/server.jar
 VOLUME /MCServer /MCServer
