@@ -14,8 +14,9 @@ services:
       - "25566:25565"
     volumes:
     - type: volume
-      source: MCServer
+      source: MCServer2
       target: /MCServer
 
 volumes:
   MCServer:
+  MCServer2:
