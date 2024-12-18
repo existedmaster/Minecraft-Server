@@ -34,3 +34,33 @@
         CMD java -Xmx2G -Xms4G -XX:+UnlockExperimentalVMOptions -XX:+UseZGC -jar server.jar
     This will run the minecraft server for us using 2GB of ram dedicated to the server and set a max ram usage of 4.
 ## Creating the Docker Compose File
+### Commands
+services:
+  Minecraft:
+    image: existedmaster/mcserver-vanilla
+    ports:
+      - "25565:25565"
+    volumes:
+    - type: volume
+      source: MCServer
+      target: /MCServer
+  
+  Minecraft2:
+    image: existedmaster/mcserver-vanilla
+    ports:
+      - "25566:25565"
+    volumes:
+    - type: volume
+      source: MCServer2
+      target: /MCServer
+
+volumes:
+  MCServer:
+  MCServer2:
+### Explanation of commands
+    I created a minecraft service to reference my image that was uploaded to my dockerhub repo
+    from there it exposes port 25565 for open connections and uses that same port for the container
+    Then I had a volume created and it targets the /MCServer directory that was created from the image.
+    Since I was going to have 2 containers created. I created 2 seperate volumes to be connected to the servers.
+    I also used a port 1 number higher for container 2, since both containers cant use the same port for external connections but left the internal port the same.
+    Other than those minor tweaks everything else stays the same.
