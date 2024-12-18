@@ -54,9 +54,9 @@
         source: MCServer2
         target: /MCServer
 
-volumes:
-  MCServer:
-  MCServer2:
+  volumes:
+    MCServer:
+    MCServer2:
 ### Explanation of commands
     I created a minecraft service to reference my image that was uploaded to my dockerhub repo
     from there it exposes port 25565 for open connections and uses that same port for the container
