@@ -35,6 +35,7 @@
     This will run the minecraft server for us using 2GB of ram dedicated to the server and set a max ram usage of 4.
 ## Creating the Docker Compose File
 ### Commands
+####
 services:
   Minecraft:
     image: existedmaster/mcserver-vanilla
