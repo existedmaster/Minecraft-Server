@@ -36,24 +36,24 @@
 ## Creating the Docker Compose File
 ### Commands
 ####
-services:
-  Minecraft:
-    image: existedmaster/mcserver-vanilla
-    ports:
-      - "25565:25565"
-    volumes:
-    - type: volume
-      source: MCServer
-      target: /MCServer
+  services:
+    Minecraft:
+      image: existedmaster/mcserver-vanilla
+      ports:
+       - "25565:25565"
+      volumes:
+        - type: volume
+          source: MCServer
+          target: /MCServer
   
-  Minecraft2:
-    image: existedmaster/mcserver-vanilla
-    ports:
-      - "25566:25565"
-    volumes:
-    - type: volume
-      source: MCServer2
-      target: /MCServer
+    Minecraft2:
+      image: existedmaster/mcserver-vanilla
+      ports:
+        - "25566:25565"
+      volumes:
+      - type: volume
+        source: MCServer2
+        target: /MCServer
 
 volumes:
   MCServer:
